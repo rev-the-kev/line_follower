@@ -7,11 +7,11 @@
 <launch>
 
     <!-- SYSTEM MODEL -->
-    <!-- vehicle parameters -->
+    <!-- vehicle parameters
     <param name="L_a" type="double" value="0.125" />
-    <param name="L_b" type="double" value="0.125" />
-    <!-- control parameters -->
-    <param name="input_gain" type="double" value="0.3" />
+    <param name="L_b" type="double" value="0.125" /> -->
+    <!-- control parameters 
+    <param name="input_gain" type="double" value="0.3" />-->
 
 	<!-- Start cam_bridge -->
 	<node pkg="como_image_processing" type="cam_bridge.py" name="cam_bridge" output="screen" respawn="true">
@@ -30,13 +30,13 @@
 		<param name="path_to_corners" value="$(find como_image_processing)/config"/>
 	</node>
 
-	<!-- ARDUINO -->
+	<!-- ARDUINO 
     <node pkg="rosserial_python" type="serial_node.py" name="arduino_node" >
-        <param name="port" value="/dev/ttyUSB1" />
-    </node>
+        <param name="port" value="/dev/controller/nano" />
+    </node>-->
 
-	<!-- Start the low-level controller -->
-	<node pkg="barc" type="controller_low_level.py" name="low_level_controller" output="screen" />
+	<!-- Start the low-level controller 
+	<node pkg="barc" type="controller_low_level.py" name="low_level_controller" output="screen" />-->
 	
 	<!-- Start the high-level controller for line follower -->
 	<node pkg="line_follower" type="line_follower.py" name="line_follower" output="screen"/>
